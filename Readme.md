@@ -29,6 +29,10 @@ Gabriel Martinez
 - Maven 
 
 ##
+# Diagrama
+![Diagrama](https://github.com/BiarqGabriel/prueba-tecnica-bci/assets/132589481/a42b7e70-3e9e-462d-9c24-b4143814b7d5)
+
+##
 # Instalación
 ```bash
 - Clonar Repositorio
