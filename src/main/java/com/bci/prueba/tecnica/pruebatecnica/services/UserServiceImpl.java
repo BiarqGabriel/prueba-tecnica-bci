@@ -22,11 +22,13 @@ public class UserServiceImpl implements UserService{
     @Value("${jwt.secret}")
     private String secretKey;
 
+    @Value ("${jwt.expiration}")
+    private Integer expiration;
 
     private String generateToken(User user){
         long now = System.currentTimeMillis();
         Date nowDate = new Date(now);
-        Date expirationTime = new Date(now + 3600000); // 1 hora
+        Date expirationTime = new Date(now + expiration); // 1 hora
         return JWT.create()
                 .withIssuedAt(nowDate)
                 .withExpiresAt(expirationTime)

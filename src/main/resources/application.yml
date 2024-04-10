@@ -15,7 +15,8 @@ spring:
 
 password:
     pattern: ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$
+    message: "La contraseña debe tener al menos una letra mayúscula, una letra minúscula, un número y un tamaño de 8 a 20 caracteres"
 
 jwt:
     secret: 586E3272357538782F413F4428472B4B6250655368566B597033733676397924
-    expiration: 86400000
+    expiration: 3600000
