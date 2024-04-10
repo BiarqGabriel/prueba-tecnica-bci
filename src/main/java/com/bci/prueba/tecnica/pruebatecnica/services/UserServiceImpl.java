@@ -13,7 +13,10 @@ import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserDTO;
 import com.bci.prueba.tecnica.pruebatecnica.entities.User;
 import com.bci.prueba.tecnica.pruebatecnica.repositories.UserRepository;
 
+import lombok.Data;
+
 @Service
+@Data
 public class UserServiceImpl implements UserService{
 
     @Autowired
@@ -32,6 +35,10 @@ public class UserServiceImpl implements UserService{
     @Value("${password.message}")
     private String pswdMessage;
 
+
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     private String generateToken(User user){
         long now = System.currentTimeMillis();
@@ -69,8 +76,8 @@ public class UserServiceImpl implements UserService{
         if (email == null) {
             throw new IllegalArgumentException("Email is required");
         }
-        User user = userRepository.findByEmail(email);
-        if(user == null) {
+        User user = userRepository.findByEmail(email).orElse(null);
+        if(user == null ) {
             throw new IllegalArgumentException("Usuario no encontrado");
         }
         return user;

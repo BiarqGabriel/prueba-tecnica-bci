@@ -67,6 +67,10 @@ Gabriel Martinez
 http://localhost:8080/swagger-ui/index.html
 ```
 ##
+# Pruebas Unitarias
+```bash
+- Para realizar las pruebas deberia ejecuta el comando mvn test
+```
 # LICENSE
 - MIT
 

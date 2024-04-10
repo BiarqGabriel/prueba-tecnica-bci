@@ -15,12 +15,14 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 
 @Entity
 @Table(name = "users")
 @Data
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -32,7 +34,7 @@ public class User {
     private String name;
 
     @Column(unique = true)
-    @Email(message = "Debe ser un correo válido")
+    @Email
     private String email;
 
     private String password;

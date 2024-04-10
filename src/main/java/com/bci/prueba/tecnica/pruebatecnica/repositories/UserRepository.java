@@ -15,5 +15,5 @@ public interface UserRepository  extends CrudRepository<User, Long>{
         
         public User save(UserDTO userDTO);
 
-        public User findByEmail(String email);
+        public Optional<User> findByEmail(String email);
 }
