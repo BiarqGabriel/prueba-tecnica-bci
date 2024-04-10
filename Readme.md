@@ -7,26 +7,30 @@ Gabriel Martinez
  error.
 
  # Mandatorio
- ● Plazo: 2 días, si tienes algún inconveniente con el tiempo comunicate con nosotros
- ● Banco de datos en memoria. Ejemplo: HSQLDB o H2.
- ● Proceso de build vía Gradle o Maven.
- ● Persistencia con JPA. Ejemplo: EclipseLink, Hibernate u OpenJPA.
- ● Framework SpringBoot.
- ● Java 8+
- ● Entrega en un repositorio público (github o bitbucket) con el código fuente y script de
+- Plazo: 2 días, si tienes algún inconveniente con el tiempo comunicate con nosotros
+-  Banco de datos en memoria. Ejemplo: HSQLDB o H2.
+-  Proceso de build vía Gradle o Maven.
+-  Persistencia con JPA. Ejemplo: EclipseLink, Hibernate u OpenJPA.
+-  Framework SpringBoot.
+-  Java 8+
+-  Entrega en un repositorio público (github o bitbucket) con el código fuente y script de
  creación de BD.
 
  # Opcional
 
- ● JWT como token
- ● Pruebas unitarias
- ● Swagger
+- JWT como token
+- Pruebas unitarias
+- Swagger
 
 ##
 # Requisitos
 - Springboot 3
 - Java 17
 - Maven 
+
+##
+# Diagrama
+![Diagrama](https://github.com/BiarqGabriel/prueba-tecnica-bci/assets/132589481/a42b7e70-3e9e-462d-9c24-b4143814b7d5)
 
 ##
 # Instalación
@@ -36,8 +40,25 @@ Gabriel Martinez
 ```
 - La aplicación correra por defecto en el puerto 8080 en caso de querer otro puerto especificar en application.yml con server.port
 ##
+# Objeto
+```bash
+{
+    "name": "Juan Rodriguez",
+    "email": "juan@rodriguez.org",
+    "password": "hunter22",
+    "phones": [
+        {
+            "number": "1234567",
+            "citycode": "1",
+            "countrycode": "57"
+        }
+    ]
+}
+```
+##
 # API ENDPOINTS
 | ENDPOINT| METHOD | REQUEST | RESPONSE |
+|---------|--------|---------|----------|
 | /user?email= | GET | EMAIL | { id, name, email, passowrd, phones[], created, modified, lastLogin, token}  or {"message" : error} |
 | /user | POST | {name, email, password, phones[]} | { id, name, email, passowrd, phones[], created, modified, lastLogin, token}  or {"message" : error} |
 ##
