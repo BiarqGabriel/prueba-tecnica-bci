@@ -40,6 +40,22 @@ Gabriel Martinez
 ```
 - La aplicación correra por defecto en el puerto 8080 en caso de querer otro puerto especificar en application.yml con server.port
 ##
+# Objeto
+```bash
+{
+    "nombre": "Juan Rodriguez",
+    "correo": "juan@rodriguez.org",
+    "contrasena": "hunter22",
+    "telefonos": [
+        {
+            "number": "1234567",
+            "citycode": "1",
+            "contrycode": "57"
+        }
+    ]
+}
+```
+##
 # API ENDPOINTS
 | ENDPOINT| METHOD | REQUEST | RESPONSE |
 |---------|--------|---------|----------|
