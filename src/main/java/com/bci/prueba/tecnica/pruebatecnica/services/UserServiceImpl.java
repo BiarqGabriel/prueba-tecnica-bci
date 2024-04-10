@@ -1,6 +1,7 @@
 package com.bci.prueba.tecnica.pruebatecnica.services;
 
 import java.util.Date;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,6 +26,13 @@ public class UserServiceImpl implements UserService{
     @Value ("${jwt.expiration}")
     private Integer expiration;
 
+    @Value("${password.pattern}")
+    private String pswdPattern;
+    
+    @Value("${password.message}")
+    private String pswdMessage;
+
+
     private String generateToken(User user){
         long now = System.currentTimeMillis();
         Date nowDate = new Date(now);
@@ -40,6 +48,9 @@ public class UserServiceImpl implements UserService{
     public User saveUser(UserDTO userDTO) {
         if (userDTO == null) {
             throw new IllegalArgumentException("User is required");
+        }
+        if(!Pattern.matches(pswdPattern, userDTO.getPassword())){
+            throw new IllegalArgumentException(pswdMessage);
         }
         User user = new User();
         user.setEmail(userDTO.getEmail());
