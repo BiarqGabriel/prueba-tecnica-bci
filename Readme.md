@@ -18,9 +18,9 @@ Gabriel Martinez
 
  # Opcional
 
- ● JWT como token
- ● Pruebas unitarias
- ● Swagger
+- JWT como token
+- Pruebas unitarias
+- Swagger
 
 ##
 # Requisitos
