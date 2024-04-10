@@ -1,0 +1,2 @@
+insert into users (created, email, is_active, last_login, modified, name, password) values (now(), 'juan@rodriguez.org', true, now(), now(), 'Juan Rodriguez', 'hunter2')
+insert into user_phones(user_id, city_code, country_code, number) values (1, 1, 57, 1234567)
