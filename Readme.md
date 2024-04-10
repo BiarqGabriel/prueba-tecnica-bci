@@ -43,14 +43,14 @@ Gabriel Martinez
 # Objeto
 ```bash
 {
-    "nombre": "Juan Rodriguez",
-    "correo": "juan@rodriguez.org",
-    "contrasena": "hunter22",
-    "telefonos": [
+    "name": "Juan Rodriguez",
+    "email": "juan@rodriguez.org",
+    "password": "hunter22",
+    "phones": [
         {
             "number": "1234567",
             "citycode": "1",
-            "contrycode": "57"
+            "countrycode": "57"
         }
     ]
 }
