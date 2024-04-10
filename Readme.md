@@ -10,7 +10,7 @@ Gabriel Martinez
 - Plazo: 2 días, si tienes algún inconveniente con el tiempo comunicate con nosotros
 -  Banco de datos en memoria. Ejemplo: HSQLDB o H2.
 -  Proceso de build vía Gradle o Maven.
--  ersistencia con JPA. Ejemplo: EclipseLink, Hibernate u OpenJPA.
+-  Persistencia con JPA. Ejemplo: EclipseLink, Hibernate u OpenJPA.
 -  Framework SpringBoot.
 -  Java 8+
 -  Entrega en un repositorio público (github o bitbucket) con el código fuente y script de
