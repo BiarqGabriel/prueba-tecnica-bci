@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserRegisterResponseDto saveUser(UserDTO userDTO) {
         if (userDTO == null) {
-            throw new IllegalArgumentException("User is required");
+            throw new IllegalArgumentException("User body es requerido");
         }
         
         User user = new User();
@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getUserByEmail(String email) {
         if (email == null) {
-            throw new IllegalArgumentException("Email is required");
+            throw new IllegalArgumentException("Correo es Requerido");
         }
         User user = userRepository.findByEmail(email).orElse(null);
         if(user == null ) {
@@ -72,14 +72,14 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserLoginResponseDto doLogin(UserLoginRequestDto user) {
         if (user == null) {
-            throw new IllegalArgumentException("User is required");
+            throw new IllegalArgumentException("Usuario es Requrido");
         }
         User userEntity = userRepository.findByEmail(user.getEmail()).orElse(null);
         if(userEntity == null ) {
             throw new IllegalArgumentException("Usuario no encontrado");
         }
         if(!userEntity.getPassword().equals(user.getPassword())) {
-            throw new IllegalArgumentException("Password incorrecto");
+            throw new IllegalArgumentException("Contraseña incorrecta");
         }
         userEntity.setLastLogin(new Date());
         userRepository.save(userEntity);

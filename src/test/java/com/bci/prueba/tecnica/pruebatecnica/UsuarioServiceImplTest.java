@@ -25,17 +25,11 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Value;
 
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.algorithms.Algorithm;
 import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserDTO;
-import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserLoginRequestDto;
-import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserLoginResponseDto;
 import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserRegisterResponseDto;
-import com.bci.prueba.tecnica.pruebatecnica.entities.Phone;
 import com.bci.prueba.tecnica.pruebatecnica.entities.User;
 import com.bci.prueba.tecnica.pruebatecnica.jwt.JwtService;
 import com.bci.prueba.tecnica.pruebatecnica.repositories.UserRepository;
-import com.bci.prueba.tecnica.pruebatecnica.services.UserService;
 import com.bci.prueba.tecnica.pruebatecnica.services.UserServiceImpl;
 
 @ExtendWith(MockitoExtension.class)
@@ -55,7 +49,6 @@ public class UsuarioServiceImplTest {
     @Value("${password.message}")
     private String pswdMessage;
 
-    private User user;
 
     @BeforeEach
     void setUp() {  
