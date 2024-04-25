@@ -59,8 +59,9 @@ Gabriel Martinez
 # API ENDPOINTS
 | ENDPOINT| METHOD | REQUEST | RESPONSE |
 |---------|--------|---------|----------|
-| /user?email= | GET | EMAIL | { id, name, email, passowrd, phones[], created, modified, lastLogin, token}  or {"message" : error} |
+| /user?email= | GET | EMAIL, BEARER TOKEN | { id, name, email, passowrd, phones[], created, modified, lastLogin, token}  or {"message" : error} |
 | /user | POST | {name, email, password, phones[]} | { id, name, email, passowrd, phones[], created, modified, lastLogin, token}  or {"message" : error} |
+| /user/login | POST | {email, password} | { token }  or {"message" : error} |
 ##
 # SWAGGER
 ```bash
