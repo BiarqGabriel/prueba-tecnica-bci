@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserDTO;
+import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserLoginRequestDto;
+import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserLoginResponseDto;
+import com.bci.prueba.tecnica.pruebatecnica.controllers.dto.UserRegisterResponseDto;
 import com.bci.prueba.tecnica.pruebatecnica.entities.User;
 import com.bci.prueba.tecnica.pruebatecnica.services.UserService;
 
@@ -22,15 +25,30 @@ public class UserController {
     @Autowired
     private  UserService userService;
 
+    //Endpoint to search user by email using Springboot Security Token JWT
     @GetMapping
     public ResponseEntity<User> getUserByEmail(@RequestParam String email) {
         User user = userService.getUserByEmail(email);
         return ResponseEntity.ok(user);
     }
 
-    @PostMapping
-    public ResponseEntity<User> saveUser(@RequestBody UserDTO user) {
-        User userSaved = userService.saveUser(user);
+
+    //EndPoint to Register new User
+    @PostMapping()
+    public ResponseEntity<UserRegisterResponseDto> saveUser(@RequestBody UserDTO user) {
+        UserRegisterResponseDto userSaved = userService.saveUser(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(userSaved);
     }
+
+
+    //Endpoint to simulate login request using Springboot Security Token JWT and return a token
+    @PostMapping("/login")
+    public ResponseEntity<UserLoginResponseDto> doLogin (@RequestBody UserLoginRequestDto user)
+    {
+        UserLoginResponseDto userLogin = userService.doLogin(user);
+        return ResponseEntity.ok(userLogin);
+    }
+
+   
+
 }

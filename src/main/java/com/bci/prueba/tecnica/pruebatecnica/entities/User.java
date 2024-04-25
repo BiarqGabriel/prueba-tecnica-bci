@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,6 +24,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "users")
 @Data
 @NoArgsConstructor
+
+
 public class User {
 
     @Id
@@ -37,6 +40,7 @@ public class User {
     @Email
     private String email;
 
+    @Pattern( regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,20}$" , message = "La contraseña debe tener al menos una letra mayúscula, una letra minúscula, un número y un tamaño de 8 a 20 caracteres")
     private String password;
 
     @ElementCollection
@@ -47,8 +51,6 @@ public class User {
     private Date modified;
 
     private Date lastLogin;
-
-    private String token;
 
     @Column(columnDefinition = "boolean default true")
     private boolean isActive;
