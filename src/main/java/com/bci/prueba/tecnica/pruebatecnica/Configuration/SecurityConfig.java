@@ -30,6 +30,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authRequest -> authRequest
                 //solo permitir metodo post para crear usuario
                          .requestMatchers(HttpMethod.POST, "/user/**").permitAll()
+                         .requestMatchers("/swagger-ui/**").permitAll() 
+                         .requestMatchers("/v3/api-docs/**").permitAll() 
                         .anyRequest().authenticated())
                 .sessionManagement(sessionManagement->
                     sessionManagement
@@ -39,3 +41,4 @@ public class SecurityConfig {
                 .build();
     }
 }
+
