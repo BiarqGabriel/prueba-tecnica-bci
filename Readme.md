@@ -30,7 +30,7 @@ Gabriel Martinez
 
 ##
 # Diagrama
-![Diagrama](https://github.com/BiarqGabriel/prueba-tecnica-bci/assets/132589481/a42b7e70-3e9e-462d-9c24-b4143814b7d5)
+![Diagrama sin título drawio](https://github.com/BiarqGabriel/prueba-tecnica-bci/assets/132589481/bd34e406-a9a7-4711-99d4-fa613fd464a0)
 
 ##
 # Instalación
