@@ -28,17 +28,14 @@ public class SecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authRequest -> authRequest
-                //solo permitir metodo post para crear usuario
-                         .requestMatchers(HttpMethod.POST, "/user/**").permitAll()
-                         .requestMatchers("/swagger-ui/**").permitAll() 
-                         .requestMatchers("/v3/api-docs/**").permitAll() 
+                        .requestMatchers(HttpMethod.POST, "/user/**").permitAll()
+                        .requestMatchers("/swagger-ui/**").permitAll()
+                        .requestMatchers("/v3/api-docs/**").permitAll()
                         .anyRequest().authenticated())
-                .sessionManagement(sessionManagement->
-                    sessionManagement
+                .sessionManagement(sessionManagement -> sessionManagement
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 }
-
